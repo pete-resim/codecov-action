@@ -556,8 +556,8 @@ class OidcClient {
             const res = yield httpclient
                 .getJson(id_token_url)
                 .catch(error => {
-                throw new Error(`Failed to get ID Token. \n 
-        Error Code : ${error.statusCode}\n 
+                throw new Error(`Failed to get ID Token. \n
+        Error Code : ${error.statusCode}\n
         Error Message: ${error.message}`);
             });
             const id_token = (_a = res.result) === null || _a === void 0 ? void 0 : _a.value;
@@ -32165,7 +32165,7 @@ module.exports = parseParams
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __nccwpck_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -32179,7 +32179,7 @@ module.exports = parseParams
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		var threw = true;
 /******/ 		try {
@@ -32188,11 +32188,11 @@ module.exports = parseParams
 /******/ 		} finally {
 /******/ 			if(threw) delete __webpack_module_cache__[moduleId];
 /******/ 		}
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
@@ -32204,11 +32204,11 @@ module.exports = parseParams
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/compat */
-/******/ 	
+/******/
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -32340,7 +32340,7 @@ const getGitService = () => {
     return 'github';
 };
 const isPullRequestFromFork = () => {
-    core.info(`evenName: ${context.eventName}`);
+    core.info(`eventName: ${context.eventName}`);
     if (!['pull_request', 'pull_request_target'].includes(context.eventName)) {
         return false;
     }
@@ -32351,6 +32351,7 @@ const isPullRequestFromFork = () => {
 };
 const getToken = () => buildExec_awaiter(void 0, void 0, void 0, function* () {
     let token = core.getInput('token');
+    core.info(`===> Resim Debug: token: ${token}`);
     let url = core.getInput('url');
     const useOIDC = isTrue(core.getInput('use_oidc'));
     if (useOIDC) {
